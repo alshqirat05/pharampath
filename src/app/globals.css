@@ -1,0 +1,140 @@
+/*
+ * Ottawa Falls Palette (#00a78e) + Subtle Nahdi Rose/Mauve Accents (#d6336c)
+ * Base Ottawa Falls: #00a78e
+ * 20% Shades: #008672, #006455, #004339, #00211c
+ * 20% Tints:  #33b9a5, #66cabb, #99dcd2, #ccede8
+ * Subtle Nahdi Touches: #d6336c, #e64980, #f783ac, #fce7f3
+ */
+@import "tailwindcss";
+
+@theme inline {
+  --font-display: var(--font-readex), var(--font-bricolage), system-ui, sans-serif;
+  --font-body: var(--font-plex-arabic), system-ui, sans-serif;
+
+  /* Map teal scale directly to Ottawa Falls tints, base, and shades */
+  --color-teal-50: #e8f7f4;
+  --color-teal-100: #ccede8;
+  --color-teal-200: #99dcd2;
+  --color-teal-300: #66cabb;
+  --color-teal-400: #33b9a5;
+  --color-teal-500: #00a78e;
+  --color-teal-600: #00a78e;
+  --color-teal-700: #008672;
+  --color-teal-800: #006455;
+  --color-teal-900: #004339;
+  --color-teal-950: #00211c;
+
+  /* Explicit Ottawa Falls named tokens */
+  --color-ottawa: #00a78e;
+  --color-ottawa-shade-1: #008672;
+  --color-ottawa-shade-2: #006455;
+  --color-ottawa-shade-3: #004339;
+  --color-ottawa-shade-4: #00211c;
+  --color-ottawa-tint-1: #33b9a5;
+  --color-ottawa-tint-2: #66cabb;
+  --color-ottawa-tint-3: #99dcd2;
+  --color-ottawa-tint-4: #ccede8;
+
+  /* Subtle Nahdi (Rose / Berry-Mauve) secondary accent tokens */
+  --color-nahdi: #d6336c;
+  --color-nahdi-light: #e64980;
+  --color-nahdi-tint: #f783ac;
+  --color-nahdi-soft: #fce7f3;
+}
+
+:root {
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  background-color: #f6fbfa;
+  color: #00211c;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f6fbfa;
+  color: #00211c;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background: #99dcd2;
+  color: #00211c;
+}
+
+:focus-visible {
+  outline: 2px solid #00a78e;
+  outline-offset: 2px;
+  border-radius: 0.5rem;
+}
+
+/* ---------- 3D & Spatial Utilities ---------- */
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.translate-z-10 {
+  transform: translateZ(14px);
+}
+
+.translate-z-20 {
+  transform: translateZ(24px);
+}
+
+.translate-z-30 {
+  transform: translateZ(36px);
+}
+
+/* ---------- Page transitions ---------- */
+::view-transition {
+  pointer-events: none;
+}
+::view-transition-old(.page-exit) {
+  animation: 180ms ease-in both page-fade reverse;
+}
+::view-transition-new(.page-enter) {
+  animation: 360ms var(--ease-out-expo) 60ms both page-rise;
+}
+::view-transition-group(site-header) {
+  animation: none;
+  z-index: 100;
+}
+::view-transition-old(site-header) {
+  display: none;
+}
+::view-transition-new(site-header) {
+  animation: none;
+}
+
+@keyframes page-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes page-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-new(.page-enter) {
+    animation: 150ms ease-out both page-fade;
+  }
+  ::view-transition-old(*) {
+    animation-duration: 0s !important;
+  }
+}
