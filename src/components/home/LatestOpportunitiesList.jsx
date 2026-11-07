@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from 'motion/react';
 import { MapPin, Clock, Users, ChevronLeft, ChevronRight, ArrowLeft, ArrowRight, Building2 } from 'lucide-react';
 import { opportunitiesSample } from '@/data/opportunitiesSample';
 import SectorTag from '@/components/ui/SectorTag';
-import ScrollZoomSection from '@/motion/ScrollZoomSection';
 import { useLanguage } from '@/context/LanguageProvider';
 
 const CARDS_PER_VIEW = 3;
@@ -29,7 +28,7 @@ export default function LatestOpportunitiesList() {
 
   return (
     <section className="py-18 lg:py-24 bg-[#ccede8]/25 border-b border-[#99dcd2]/80 overflow-hidden">
-      <ScrollZoomSection className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div className="max-w-2xl">
             <span className="inline-block text-xs font-bold text-[#004339] bg-[#ccede8] border border-[#99dcd2] px-3.5 py-1 rounded-full mb-2.5">
@@ -162,7 +161,7 @@ export default function LatestOpportunitiesList() {
             />
           ))}
         </div>
-      </ScrollZoomSection>
+      </div>
     </section>
   );
 }

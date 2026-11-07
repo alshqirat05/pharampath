@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
-import { motion, useScroll, useTransform, useSpring } from 'motion/react';
+import { motion } from 'motion/react';
 import { Search, MapPin, Building2, Clock, Sparkles, ArrowLeft, ArrowRight } from 'lucide-react';
 import { SECTORS, CITIES, WORKING_HOURS_OPTIONS } from '@/data/sectorsConfig';
 import HeroFloatingBackdrop from './HeroFloatingBackdrop';
@@ -14,22 +14,10 @@ export default function HeroSentenceSearch() {
   const { t } = useTranslation('common');
   const { pick, isRTL } = useLanguage();
   const router = useRouter();
-  const heroRef = useRef(null);
 
   const [city, setCity] = useState('');
   const [sector, setSector] = useState('');
   const [workingHours, setWorkingHours] = useState('');
-
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ['start start', 'end start'],
-  });
-
-  const smoothScroll = useSpring(scrollYProgress, { stiffness: 110, damping: 26 });
-
-  const heroScale = useTransform(smoothScroll, [0, 1], [1, 0.82]);
-  const heroOpacity = useTransform(smoothScroll, [0, 0.95], [1, 0.2]);
-  const heroY = useTransform(smoothScroll, [0, 1], [0, 70]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -45,14 +33,15 @@ export default function HeroSentenceSearch() {
 
   return (
     <section
-      ref={heroRef}
       className="relative overflow-hidden bg-gradient-to-b from-[#ccede8]/65 via-[#f6fbfa] to-[#ccede8]/35 border-b border-[#99dcd2]/80 py-12 sm:py-16 lg:py-22"
     >
       <HeroFloatingBackdrop />
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          style={{ scale: heroScale, opacity: heroOpacity, y: heroY }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
           className="relative overflow-hidden rounded-[36px] bg-white/92 backdrop-blur-xl border-2 border-[#99dcd2] shadow-[0_24px_60px_-15px_rgba(0,67,57,0.16)] px-6 py-12 sm:px-12 sm:py-16 text-center"
         >
           <motion.div

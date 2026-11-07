@@ -7,7 +7,6 @@ import { motion } from 'motion/react';
 import { Layers, BookOpenCheck, PhoneCall, ArrowLeft, ArrowRight, Building2 } from 'lucide-react';
 import { SECTORS } from '@/data/sectorsConfig';
 import scientistIllustration from '@/imgs/undraw_scientist_5td0.svg';
-import ScrollZoomSection from '@/motion/ScrollZoomSection';
 import { useLanguage } from '@/context/LanguageProvider';
 
 export default function HomeAboutSection() {
@@ -45,7 +44,7 @@ export default function HomeAboutSection() {
 
   return (
     <section className="py-20 lg:py-26 bg-white border-b border-[#99dcd2]/70 overflow-hidden">
-      <ScrollZoomSection className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Self-Running Orbital Animation with undraw_scientist_5td0.svg */}
           <div className="lg:col-span-5">
@@ -181,7 +180,7 @@ export default function HomeAboutSection() {
             </div>
           </div>
         </div>
-      </ScrollZoomSection>
+      </div>
     </section>
   );
 }

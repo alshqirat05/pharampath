@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { ArrowLeft, ArrowRight, MessageSquareText } from 'lucide-react';
 import MagneticButton from '@/motion/MagneticButton';
-import ScrollZoomSection from '@/motion/ScrollZoomSection';
 import { useLanguage } from '@/context/LanguageProvider';
 
 export default function ClosingMagneticCta() {
@@ -14,10 +13,7 @@ export default function ClosingMagneticCta() {
 
   return (
     <section className="py-18 lg:py-24 bg-[#ccede8]/30">
-      <ScrollZoomSection
-        zoomRange={[0.86, 1, 1, 0.92]}
-        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
-      >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl bg-white border-2 border-[#99dcd2] p-8 sm:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 shadow-sm">
           <div className="max-w-2xl space-y-2.5">
             <span className="inline-block px-3.5 py-1 rounded-full bg-[#ccede8] border border-[#99dcd2] text-[#004339] text-xs font-bold">
@@ -51,7 +47,7 @@ export default function ClosingMagneticCta() {
             </Link>
           </div>
         </div>
-      </ScrollZoomSection>
+      </div>
     </section>
   );
 }

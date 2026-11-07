@@ -6,7 +6,6 @@ import { useTranslation } from 'react-i18next';
 import { MessageSquareText, BookOpen, ShieldAlert, ExternalLink, ArrowLeft, ArrowRight } from 'lucide-react';
 import { DEMO_QA } from '@/data/assistantPromptsSample';
 import Robot3DAvatar from './Robot3DAvatar';
-import ScrollZoomSection from '@/motion/ScrollZoomSection';
 import { useLanguage } from '@/context/LanguageProvider';
 
 export default function AssistantDemoSection() {
@@ -44,7 +43,7 @@ export default function AssistantDemoSection() {
 
   return (
     <section className="py-20 lg:py-26 bg-white border-b border-[#99dcd2]/70 overflow-hidden">
-      <ScrollZoomSection className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mb-10">
           <div className="flex flex-wrap items-center gap-2 mb-3">
             <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#004339] bg-[#ccede8] border border-[#99dcd2] px-3.5 py-1 rounded-full">
@@ -176,7 +175,7 @@ export default function AssistantDemoSection() {
             </div>
           </div>
         </div>
-      </ScrollZoomSection>
+      </div>
     </section>
   );
 }
