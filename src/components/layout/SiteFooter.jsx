@@ -11,9 +11,9 @@ export default function SiteFooter() {
   const { toggleLanguage } = useLanguage();
 
   return (
-    <footer role="contentinfo" className="mt-auto bg-[#00211c] text-[#ccede8] border-t border-[#004339]">
+    <footer role="contentinfo" className="mt-auto bg-[#00211c] dark:bg-[#04120f] text-[#ccede8] border-t border-[#004339] dark:border-[#09221d] transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start pb-8 border-b border-[#004339]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start pb-8 border-b border-[#004339] dark:border-[#09221d]">
           <div className="md:col-span-5 space-y-3">
             <div className="flex items-center gap-2.5">
               <span className="w-8 h-8 rounded-xl bg-[#00a78e] text-white font-display font-bold text-sm flex items-center justify-center">

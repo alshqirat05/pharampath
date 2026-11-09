@@ -43,12 +43,12 @@ export default function HomeAboutSection() {
   ];
 
   return (
-    <section className="py-20 lg:py-26 bg-white border-b border-[#99dcd2]/70 overflow-hidden">
+    <section className="py-20 lg:py-26 bg-white dark:bg-[#051411] border-b border-[#99dcd2]/70 dark:border-[#1e403a] overflow-hidden transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Self-Running Orbital Animation with undraw_scientist_5td0.svg */}
           <div className="lg:col-span-5">
-            <div className="relative h-84 sm:h-96 rounded-3xl bg-[#ccede8]/35 border border-[#99dcd2] p-6 flex items-center justify-center overflow-hidden shadow-xs">
+            <div className="relative h-84 sm:h-96 rounded-3xl bg-[#ccede8]/35 dark:bg-[#0b1e1b] border border-[#99dcd2] dark:border-[#1e403a] p-6 flex items-center justify-center overflow-hidden shadow-xs">
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
@@ -97,24 +97,24 @@ export default function HomeAboutSection() {
                       repeat: Infinity,
                       ease: 'easeInOut',
                     }}
-                    className={`absolute ${nodePositions[idx]} z-20 rounded-2xl bg-white/95 backdrop-blur-xs border ${
-                      isNahdiNode ? 'border-[#fbcfe8]' : 'border-[#99dcd2]'
+                    className={`absolute ${nodePositions[idx]} z-20 rounded-2xl bg-white/95 dark:bg-[#061a16]/95 backdrop-blur-xs border ${
+                      isNahdiNode ? 'border-[#fbcfe8] dark:border-[#9d174d]' : 'border-[#99dcd2] dark:border-[#1e403a]'
                     } px-3 py-2 shadow-sm flex items-center gap-2`}
                   >
                     <span
                       className={`w-7 h-7 rounded-xl flex items-center justify-center shrink-0 ${
                         isNahdiNode
-                          ? 'bg-[#fce7f3] text-[#d6336c]'
-                          : 'bg-[#ccede8] text-[#006455]'
+                          ? 'bg-[#fce7f3] dark:bg-[#831843]/40 text-[#d6336c] dark:text-[#f472b6]'
+                          : 'bg-[#ccede8] dark:bg-[#004339]/50 text-[#006455] dark:text-[#99dcd2]'
                       }`}
                     >
                       <Building2 className="w-3.5 h-3.5" />
                     </span>
                     <div>
-                      <span className="block text-[10px] font-mono text-[#008672] leading-none">
+                      <span className="block text-[10px] font-mono text-[#008672] dark:text-[#33b9a5] leading-none">
                         {s.index}
                       </span>
-                      <span className="text-xs font-bold text-[#00211c]">
+                      <span className="text-xs font-bold text-[#00211c] dark:text-white">
                         {pick(s.shortLabel)}
                       </span>
                     </div>
@@ -127,13 +127,13 @@ export default function HomeAboutSection() {
           {/* Right Column: Platform Idea & 3 Pillars */}
           <div className="lg:col-span-7 space-y-6">
             <div>
-              <span className="inline-block text-xs font-bold text-[#004339] bg-[#ccede8] border border-[#99dcd2] px-3.5 py-1 rounded-full mb-3">
+              <span className="inline-block text-xs font-bold text-[#004339] dark:text-[#99dcd2] bg-[#ccede8] dark:bg-[#0b1e1b] border border-[#99dcd2] dark:border-[#1e403a] px-3.5 py-1 rounded-full mb-3">
                 {t('homeAbout.badge')}
               </span>
-              <h2 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-[#00211c] leading-snug mb-3">
+              <h2 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-[#00211c] dark:text-white leading-snug mb-3">
                 {t('homeAbout.title')}
               </h2>
-              <p className="text-sm sm:text-base text-[#004339]/80 leading-relaxed">
+              <p className="text-sm sm:text-base text-[#004339]/80 dark:text-[#99dcd2]/90 leading-relaxed">
                 {t('homeAbout.subtitle')}
               </p>
             </div>
@@ -151,16 +151,16 @@ export default function HomeAboutSection() {
                       delay: index * 0.6,
                       ease: 'easeInOut',
                     }}
-                    className="rounded-2xl bg-[#ccede8]/25 border border-[#99dcd2] p-4 flex flex-col justify-between gap-3"
+                    className="rounded-2xl bg-[#ccede8]/25 dark:bg-[#0b1e1b] border border-[#99dcd2] dark:border-[#1e403a] p-4 flex flex-col justify-between gap-3"
                   >
                     <span className={`w-10 h-10 rounded-xl ${pillar.iconBg} flex items-center justify-center shadow-xs`}>
                       <Icon className="w-5 h-5" />
                     </span>
                     <div>
-                      <h3 className="font-display font-bold text-sm sm:text-base text-[#00211c] mb-1">
+                      <h3 className="font-display font-bold text-sm sm:text-base text-[#00211c] dark:text-white mb-1">
                         {pillar.title}
                       </h3>
-                      <p className="text-xs text-[#004339]/80 leading-relaxed">
+                      <p className="text-xs text-[#004339]/80 dark:text-[#99dcd2]/80 leading-relaxed">
                         {pillar.desc}
                       </p>
                     </div>

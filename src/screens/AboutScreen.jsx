@@ -14,13 +14,13 @@ export default function AboutScreen() {
   const ArrowIcon = isRTL ? ArrowLeft : ArrowRight;
 
   return (
-    <div className="min-h-screen bg-[#FAFAFA] pb-20">
-      <section className="bg-white border-b border-zinc-200/80 py-8 sm:py-10">
+    <div className="min-h-screen bg-[#f6fbfa] dark:bg-[#051411] pb-20 transition-colors">
+      <section className="bg-white dark:bg-[#061a16] border-b border-[#99dcd2]/70 dark:border-[#1e403a] py-8 sm:py-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="inline-block text-xs font-semibold text-teal-800 bg-teal-50 border border-teal-200/80 px-3 py-1 rounded-full mb-2.5">
+          <span className="inline-block text-xs font-semibold text-[#004339] dark:text-[#99dcd2] bg-[#ccede8] dark:bg-[#0b1e1b] border border-[#99dcd2] dark:border-[#1e403a] px-3 py-1 rounded-full mb-2.5">
             {t('aboutPage.badge')}
           </span>
-          <h1 className="font-display font-bold text-2xl sm:text-3xl text-zinc-900 max-w-3xl">
+          <h1 className="font-display font-bold text-2xl sm:text-3xl text-[#00211c] dark:text-white max-w-3xl">
             {t('aboutPage.title')}
           </h1>
         </div>
@@ -28,38 +28,38 @@ export default function AboutScreen() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 space-y-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-          <div className="lg:col-span-6 rounded-2xl bg-white border border-zinc-200 p-6 shadow-2xs flex flex-col justify-between gap-5">
+          <div className="lg:col-span-6 rounded-2xl bg-white dark:bg-[#0b1e1b] border border-[#99dcd2] dark:border-[#1e403a] p-6 shadow-2xs flex flex-col justify-between gap-5">
             <div>
-              <h2 className="font-display text-lg font-bold text-zinc-900 mb-2.5">
+              <h2 className="font-display text-lg font-bold text-[#00211c] dark:text-white mb-2.5">
                 {t('aboutPage.aimTitle')}
               </h2>
-              <p className="text-sm text-zinc-600 leading-relaxed">
+              <p className="text-sm text-[#004339]/80 dark:text-[#99dcd2]/90 leading-relaxed">
                 {t('aboutPage.aimText')}
               </p>
             </div>
 
-            <div className="rounded-xl bg-teal-50/70 border border-teal-200/80 p-4 flex items-start gap-3">
-              <ShieldCheck className="w-5 h-5 text-teal-600 shrink-0 mt-0.5" />
+            <div className="rounded-xl bg-[#ccede8]/25 dark:bg-[#061a16] border border-[#99dcd2]/70 dark:border-[#1e403a] p-4 flex items-start gap-3">
+              <ShieldCheck className="w-5 h-5 text-[#00a78e] shrink-0 mt-0.5" />
               <div>
-                <h3 className="text-xs sm:text-sm font-bold text-zinc-900 mb-1">
+                <h3 className="text-xs sm:text-sm font-bold text-[#00211c] dark:text-white mb-1">
                   {t('aboutPage.privacyNoteTitle')}
                 </h3>
-                <p className="text-xs text-zinc-600 leading-relaxed">
+                <p className="text-xs text-[#004339]/80 dark:text-[#99dcd2]/80 leading-relaxed">
                   {t('aboutPage.privacyNoteText')}
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="lg:col-span-6 rounded-2xl bg-white border border-zinc-200 p-6 shadow-2xs">
-            <h2 className="font-display text-lg font-bold text-zinc-900 mb-4">
+          <div className="lg:col-span-6 rounded-2xl bg-white dark:bg-[#0b1e1b] border border-[#99dcd2] dark:border-[#1e403a] p-6 shadow-2xs">
+            <h2 className="font-display text-lg font-bold text-[#00211c] dark:text-white mb-4">
               {t('aboutPage.objectivesTitle')}
             </h2>
             <ul className="space-y-3">
               {Array.isArray(objectives) &&
                 objectives.map((obj, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-700 leading-relaxed p-3 rounded-xl bg-zinc-50 border border-zinc-200/70">
-                    <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0 mt-0.5" />
+                  <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#004339] dark:text-[#e8f7f4] leading-relaxed p-3 rounded-xl bg-[#ccede8]/15 dark:bg-[#061a16] border border-[#99dcd2]/60 dark:border-[#1e403a]">
+                    <CheckCircle2 className="w-4 h-4 text-[#00a78e] shrink-0 mt-0.5" />
                     <span>{obj}</span>
                   </li>
                 ))}
@@ -69,10 +69,10 @@ export default function AboutScreen() {
 
         <section className="space-y-4">
           <div>
-            <h2 className="font-display text-lg sm:text-xl font-bold text-zinc-900 mb-1">
+            <h2 className="font-display text-lg sm:text-xl font-bold text-[#00211c] dark:text-white mb-1">
               {t('aboutPage.sectorsHeading')}
             </h2>
-            <p className="text-xs sm:text-sm text-zinc-500">
+            <p className="text-xs sm:text-sm text-[#004339]/80 dark:text-[#99dcd2]/80">
               {t('aboutPage.sectorsSubheading')}
             </p>
           </div>
@@ -86,23 +86,23 @@ export default function AboutScreen() {
               >
                 <Link
                   href={`/opportunities?sector=${s.id}`}
-                  className="h-full rounded-2xl bg-white border border-zinc-200 hover:border-teal-600/60 p-5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between gap-4"
+                  className="h-full rounded-2xl bg-white dark:bg-[#0b1e1b] border border-[#99dcd2] dark:border-[#1e403a] hover:border-[#00a78e] dark:hover:border-[#00a78e] p-5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between gap-4"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <span className="w-8 h-8 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center">
+                      <span className="w-8 h-8 rounded-xl bg-[#ccede8] dark:bg-[#061a16] text-[#006455] dark:text-[#99dcd2] flex items-center justify-center">
                         <Building2 className="w-4 h-4" />
                       </span>
-                      <span className="font-mono text-xs font-bold text-zinc-300">{s.index}</span>
+                      <span className="font-mono text-xs font-bold text-[#008672] dark:text-[#33b9a5]">{s.index}</span>
                     </div>
-                    <h3 className="font-display font-bold text-sm sm:text-base text-zinc-900 mb-1.5">
+                    <h3 className="font-display font-bold text-sm sm:text-base text-[#00211c] dark:text-white mb-1.5">
                       {pick(s.label)}
                     </h3>
-                    <p className="text-xs text-zinc-500 leading-relaxed">
+                    <p className="text-xs text-[#004339]/80 dark:text-[#99dcd2]/80 leading-relaxed">
                       {pick(s.oneLiner)}
                     </p>
                   </div>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-teal-700">
+                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#006455] dark:text-[#99dcd2]">
                     <span>{t('hero.searchBtn')}</span>
                     <ArrowIcon className="w-3.5 h-3.5" />
                   </span>

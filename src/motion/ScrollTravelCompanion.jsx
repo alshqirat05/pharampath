@@ -36,9 +36,9 @@ export default function ScrollTravelCompanion() {
         >
           <motion.div
             style={{ rotate }}
-            className="w-11 h-11 rounded-2xl bg-white/90 backdrop-blur-md border border-[#66cabb] shadow-lg shadow-[#004339]/10 flex items-center justify-center"
+            className="w-11 h-11 rounded-2xl bg-white/90 dark:bg-[#0b1e1b]/90 backdrop-blur-md border border-[#66cabb] dark:border-[#1e403a] shadow-lg shadow-[#004339]/10 flex items-center justify-center"
           >
-            <div className="w-4 h-4 rounded-full border-2 border-[#00a78e] bg-[#ccede8]" />
+            <div className="w-4 h-4 rounded-full border-2 border-[#00a78e] bg-[#ccede8] dark:bg-[#004339]" />
           </motion.div>
           <div className="w-0.5 h-16 rounded-full bg-gradient-to-b from-[#00a78e]/50 to-transparent" />
         </motion.div>

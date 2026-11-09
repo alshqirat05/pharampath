@@ -91,8 +91,17 @@
     "allSectors": "All",
     "allCities": "All Cities",
     "allHours": "All Hours",
+    "tag1": "4 Training Sectors",
+    "tag2": "Regularly Updated",
+    "tag3": "Direct Coordinator Contact",
     "allInterests": "All Interests",
+    "searchLabel": "Quick Search",
+    "searchPlaceholder": "Search by provider, title, or city...",
+    "moreFilters": "More Filters",
+    "lessFilters": "Less Filters",
     "resetFilters": "Reset Filters",
+    "activeFiltersLabel": "Active Filters",
+    "themeToggle": "Toggle theme (dark / light)",
     "resultsCount": "matching opportunities",
     "emptyTitle": "No training opportunities match your current filters",
     "emptySubtitle": "Try selecting another city, clearing the date range, or switching sectors."
@@ -111,7 +120,13 @@
     "coordinatorLabel": "Training Coordinator",
     "emailAction": "Send Email",
     "callAction": "Call Directly",
-    "relatedTitle": "Similar Opportunities in This Sector"
+    "relatedTitle": "Similar Opportunities in This Sector",
+    "bookTraining": "Book Training",
+    "alreadyBooked": "Already in your bookings",
+    "bookingSuccessTitle": "Training Booking Submitted Successfully!",
+    "bookingSuccessDesc": "This placement has been added to your applications history (Pending). You can track review status and the milestone timeline on your dashboard.",
+    "viewInDashboard": "Go to Student Dashboard",
+    "closeModal": "Continue Browsing"
   },
   "assistantPage": {
     "badge": "AI Study Companion",
@@ -170,5 +185,76 @@
     "switchToRegister": "Don't have an account yet?",
     "switchToLogin": "Already have an account?",
     "sampleNotice": "Details received successfully (Educational demo environment — Supabase-ready)."
+  },
+  "dashboard": {
+    "pageLabel": "Student Dashboard",
+    "greeting": "Welcome, {{name}}",
+    "subtitle": "Track your accepted training and booking requests in one place.",
+    "actions": {
+      "browse": "Browse opportunities",
+      "edit": "Edit profile",
+      "logout": "Sign out"
+    },
+    "stats": {
+      "remaining": "Days remaining",
+      "elapsed": "Days elapsed",
+      "weeklyDays": "Training days / week",
+      "bookings": "Booking requests",
+      "daysUnit": "days",
+      "ofTotal": "of {{total}} days",
+      "untilEnd": "until {{date}}",
+      "perWeek": "days per week",
+      "bookingsBreakdown": "{{accepted}} accepted · {{pending}} pending"
+    },
+    "countdown": {
+      "title": "Training countdown",
+      "desc": "Calculated from the start and end dates in your accepted training post.",
+      "remaining": "days left",
+      "elapsedPct": "{{pct}}% elapsed",
+      "start": "Start",
+      "end": "End",
+      "total": "Total duration",
+      "elapsed": "Elapsed",
+      "stageAccepted": "Booking accepted",
+      "stageStart": "Training starts",
+      "stageEnd": "Training ends",
+      "inProgress": "In progress"
+    },
+    "pharmacy": {
+      "title": "Accepted pharmacy",
+      "desc": "Training site details as listed in the post.",
+      "viewAd": "View post",
+      "name": "Pharmacy",
+      "location": "Location",
+      "time": "Training hours",
+      "days": "Training days",
+      "coordinator": "Coordinator",
+      "call": "Call",
+      "email": "Email",
+      "accepted": "Accepted"
+    },
+    "history": {
+      "title": "Booking history",
+      "desc": "Every training request you submitted and its current status.",
+      "all": "All",
+      "accepted": "Accepted",
+      "pending": "Pending",
+      "rejected": "Rejected",
+      "empty": "No requests in this category.",
+      "colSite": "Training site",
+      "colDate": "Requested",
+      "colPeriod": "Training period",
+      "colStatus": "Status",
+      "viewAd": "View post"
+    },
+    "profile": {
+      "title": "My profile",
+      "desc": "Information entered when you registered.",
+      "edit": "Edit",
+      "modalTitle": "Edit profile",
+      "save": "Save changes",
+      "cancel": "Cancel",
+      "memberSince": "Member since {{date}}"
+    }
   }
 }

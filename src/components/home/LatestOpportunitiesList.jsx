@@ -27,17 +27,17 @@ export default function LatestOpportunitiesList() {
   const NextIcon = isRTL ? ChevronLeft : ChevronRight;
 
   return (
-    <section className="py-18 lg:py-24 bg-[#ccede8]/25 border-b border-[#99dcd2]/80 overflow-hidden">
+    <section className="py-18 lg:py-24 bg-[#ccede8]/25 dark:bg-[#061a16] border-b border-[#99dcd2]/80 dark:border-[#1e403a] overflow-hidden transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div className="max-w-2xl">
-            <span className="inline-block text-xs font-bold text-[#004339] bg-[#ccede8] border border-[#99dcd2] px-3.5 py-1 rounded-full mb-2.5">
+            <span className="inline-block text-xs font-bold text-[#004339] dark:text-[#99dcd2] bg-[#ccede8] dark:bg-[#0b1e1b] border border-[#99dcd2] dark:border-[#1e403a] px-3.5 py-1 rounded-full mb-2.5">
               {t('latestOpportunities.badge')}
             </span>
-            <h2 className="font-display font-bold text-2xl sm:text-3xl text-[#00211c] mb-1.5">
+            <h2 className="font-display font-bold text-2xl sm:text-3xl text-[#00211c] dark:text-white mb-1.5">
               {t('latestOpportunities.title')}
             </h2>
-            <p className="text-sm text-[#004339]/80 leading-relaxed">
+            <p className="text-sm text-[#004339]/80 dark:text-[#99dcd2]/80 leading-relaxed">
               {t('latestOpportunities.subtitle')}
             </p>
           </div>
@@ -47,7 +47,7 @@ export default function LatestOpportunitiesList() {
               type="button"
               onClick={handlePrev}
               aria-label={t('latestOpportunities.prevSlide')}
-              className="w-10 h-10 rounded-xl border border-[#99dcd2] bg-white hover:bg-[#00a78e] hover:text-white hover:border-[#00a78e] text-[#004339] flex items-center justify-center transition-colors cursor-pointer"
+              className="w-10 h-10 rounded-xl border border-[#99dcd2] dark:border-[#1e403a] bg-white dark:bg-[#0b1e1b] hover:bg-[#00a78e] hover:text-white hover:border-[#00a78e] dark:hover:bg-[#00a78e] text-[#004339] dark:text-[#ccede8] flex items-center justify-center transition-colors cursor-pointer"
             >
               <PrevIcon className="w-4 h-4" />
             </button>
@@ -55,7 +55,7 @@ export default function LatestOpportunitiesList() {
               type="button"
               onClick={handleNext}
               aria-label={t('latestOpportunities.nextSlide')}
-              className="w-10 h-10 rounded-xl border border-[#99dcd2] bg-white hover:bg-[#00a78e] hover:text-white hover:border-[#00a78e] text-[#004339] flex items-center justify-center transition-colors cursor-pointer"
+              className="w-10 h-10 rounded-xl border border-[#99dcd2] dark:border-[#1e403a] bg-white dark:bg-[#0b1e1b] hover:bg-[#00a78e] hover:text-white hover:border-[#00a78e] dark:hover:bg-[#00a78e] text-[#004339] dark:text-[#ccede8] flex items-center justify-center transition-colors cursor-pointer"
             >
               <NextIcon className="w-4 h-4" />
             </button>
@@ -86,33 +86,33 @@ export default function LatestOpportunitiesList() {
               return (
                 <article
                   key={opp.id}
-                  className="group rounded-2xl bg-white border border-[#99dcd2] hover:border-[#00a78e] p-5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between"
+                  className="group rounded-2xl bg-white dark:bg-[#0b1e1b] border border-[#99dcd2] dark:border-[#1e403a] p-5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between overflow-hidden min-w-0"
                 >
-                  <div>
+                  <div className="min-w-0">
                     <div className="flex items-center justify-between gap-2 mb-3">
                       <SectorTag sectorId={opp.sector} short />
-                      <span className="inline-flex items-center gap-1 text-xs font-bold text-[#006455] bg-[#ccede8]/80 px-2.5 py-0.5 rounded-md">
+                      <span className="shrink-0 inline-flex items-center gap-1 text-xs font-bold text-[#006455] dark:text-[#99dcd2] bg-[#ccede8]/80 dark:bg-[#061a16] px-2.5 py-0.5 rounded-md">
                         <Users className="w-3.5 h-3.5 text-[#00a78e]" />
                         {opp.availablePositions} {t('latestOpportunities.positions')}
                       </span>
                     </div>
 
-                    <p className="inline-flex items-center gap-1.5 text-xs font-medium text-[#006455] mb-1">
+                    <div className="flex items-center gap-1.5 text-xs font-medium text-[#006455] dark:text-[#99dcd2] mb-1 min-w-0">
                       <Building2 className="w-3.5 h-3.5 text-[#00a78e] shrink-0" />
-                      <span className="truncate">{pick(opp.organization)}</span>
-                    </p>
-                    <h3 className="font-display font-bold text-base text-[#00211c] leading-snug mb-3 group-hover:text-[#008672] transition-colors">
+                      <span className="truncate block min-w-0">{pick(opp.organization)}</span>
+                    </div>
+                    <h3 className="font-display font-bold text-base text-[#00211c] dark:text-white leading-snug mb-3 line-clamp-2">
                       {pick(opp.title)}
                     </h3>
 
-                    <div className="flex flex-col gap-1.5 text-xs text-[#004339] border-y border-[#ccede8] py-3 mb-3">
-                      <div className="flex items-center gap-2">
+                    <div className="flex flex-col gap-1.5 text-xs text-[#004339] dark:text-[#ccede8] border-y border-[#ccede8] dark:border-[#1e403a] py-3 mb-3 min-w-0">
+                      <div className="flex items-center gap-2 min-w-0">
                         <MapPin className="w-3.5 h-3.5 text-[#00a78e] shrink-0" />
-                        <span className="truncate">{pick(opp.locationDetail)}</span>
+                        <span className="truncate block min-w-0">{pick(opp.locationDetail)}</span>
                       </div>
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-2 min-w-0">
                         <Clock className="w-3.5 h-3.5 text-[#008672] shrink-0" />
-                        <span className="truncate">{pick(opp.schedule)}</span>
+                        <span className="truncate block min-w-0">{pick(opp.schedule)}</span>
                       </div>
                     </div>
 
@@ -121,7 +121,7 @@ export default function LatestOpportunitiesList() {
                         {reqList.slice(0, 2).map((req, i) => (
                           <span
                             key={i}
-                            className="rounded-lg bg-[#ccede8]/50 border border-[#99dcd2]/70 px-2.5 py-1 text-[11px] font-medium text-[#004339] line-clamp-1"
+                            className="rounded-lg bg-zinc-100 dark:bg-[#061a16] border border-zinc-200/90 dark:border-[#1e403a] px-2.5 py-1 text-[11px] font-medium text-zinc-700 dark:text-[#ccede8] truncate max-w-full"
                           >
                             {req}
                           </span>
@@ -130,13 +130,13 @@ export default function LatestOpportunitiesList() {
                     )}
                   </div>
 
-                  <div className="flex items-center justify-between pt-2">
-                    <span className="text-[11px] text-[#006455] truncate max-w-[140px]">
+                  <div className="flex items-center justify-between pt-2 min-w-0">
+                    <span className="text-[11px] text-[#006455] dark:text-[#99dcd2] truncate block min-w-0 flex-1 me-2">
                       {pick(opp.contact.coordinator)}
                     </span>
                     <Link
                       href={`/opportunities/${opp.id}`}
-                      className="inline-flex items-center gap-1.5 rounded-xl bg-[#004339] group-hover:bg-[#00a78e] text-white px-3.5 py-2 text-xs font-bold transition-colors"
+                      className="inline-flex items-center gap-1.5 rounded-xl bg-[#00a78e] hover:bg-[#008672] text-white px-3.5 py-2 text-xs font-bold transition-colors"
                     >
                       <span>{t('latestOpportunities.openDetails')}</span>
                       <ArrowIcon className="w-3.5 h-3.5" />
@@ -156,7 +156,7 @@ export default function LatestOpportunitiesList() {
               onClick={() => setStartIndex(idx)}
               aria-label={`Slide ${idx + 1}`}
               className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                idx === startIndex ? 'w-7 bg-[#00a78e]' : 'w-2 bg-[#99dcd2]'
+                idx === startIndex ? 'w-7 bg-[#00a78e]' : 'w-2 bg-[#99dcd2] dark:bg-[#1e403a]'
               }`}
             />
           ))}

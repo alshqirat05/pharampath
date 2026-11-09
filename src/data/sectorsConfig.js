@@ -8,7 +8,7 @@ export const SECTORS = [
   {
     id: 'community',
     index: '01',
-    badgeClass: 'bg-[#ccede8] text-[#004339] border-[#99dcd2]',
+    badgeClass: 'bg-[#ccede8] dark:bg-[#004339]/50 text-[#004339] dark:text-[#99dcd2] border-[#99dcd2] dark:border-[#006455]',
     activePillClass: 'bg-[#00a78e] text-white border-[#00a78e] shadow-xs',
     glareColor: 'rgba(0, 167, 142, 0.12)',
     dotClass: 'bg-[#00a78e]',
@@ -22,7 +22,7 @@ export const SECTORS = [
   {
     id: 'hospital',
     index: '02',
-    badgeClass: 'bg-[#fce7f3] text-[#9c1c47] border-[#fbcfe8]',
+    badgeClass: 'bg-[#fce7f3] dark:bg-[#831843]/35 text-[#9c1c47] dark:text-[#f472b6] border-[#fbcfe8] dark:border-[#9d174d]',
     activePillClass: 'bg-[#d6336c] text-white border-[#d6336c] shadow-xs',
     glareColor: 'rgba(214, 51, 108, 0.1)',
     dotClass: 'bg-[#d6336c]',
@@ -36,7 +36,7 @@ export const SECTORS = [
   {
     id: 'company',
     index: '03',
-    badgeClass: 'bg-[#ccede8] text-[#004339] border-[#99dcd2]',
+    badgeClass: 'bg-[#ccede8] dark:bg-[#004339]/50 text-[#004339] dark:text-[#99dcd2] border-[#99dcd2] dark:border-[#006455]',
     activePillClass: 'bg-[#008672] text-white border-[#008672] shadow-xs',
     glareColor: 'rgba(0, 134, 114, 0.12)',
     dotClass: 'bg-[#008672]',
@@ -50,7 +50,7 @@ export const SECTORS = [
   {
     id: 'factory',
     index: '04',
-    badgeClass: 'bg-[#ccede8]/70 text-[#00211c] border-[#66cabb]',
+    badgeClass: 'bg-[#ccede8]/70 dark:bg-[#00211c] text-[#00211c] dark:text-[#99dcd2] border-[#66cabb] dark:border-[#004339]',
     activePillClass: 'bg-[#004339] text-white border-[#004339] shadow-xs',
     glareColor: 'rgba(0, 67, 57, 0.12)',
     dotClass: 'bg-[#004339]',

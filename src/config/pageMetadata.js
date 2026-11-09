@@ -48,6 +48,11 @@ export const registerMetadata = {
   title: 'إنشاء حساب جديد',
 };
 
+export const dashboardMetadata = {
+  title: 'لوحة تحكم الطالب الصيدلاني',
+  description: 'متابعة مسار التدريب الميداني المعتمد وسجل الحجوزات والجدول الزمني للطالب الصيدلاني.',
+};
+
 export function opportunityStaticParams() {
   return opportunitiesSample.map((item) => ({ id: item.id }));
 }

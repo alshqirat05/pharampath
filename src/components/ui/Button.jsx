@@ -6,7 +6,7 @@ const VARIANTS = {
   primary:
     'bg-[#00a78e] text-white hover:bg-[#008672] border border-[#00a78e] hover:border-[#008672] shadow-xs',
   secondary:
-    'bg-white text-[#004339] hover:bg-[#ccede8]/40 border border-[#99dcd2] shadow-2xs',
+    'bg-white dark:bg-[#0b1e1b] text-[#004339] dark:text-[#ccede8] hover:bg-[#ccede8]/40 dark:hover:bg-[#132b26] border border-[#99dcd2] dark:border-[#1e403a] shadow-2xs',
   accent:
     'bg-[#006455] text-white hover:bg-[#004339] border border-[#006455] shadow-xs',
   dark:

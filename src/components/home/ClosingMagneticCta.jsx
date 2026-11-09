@@ -12,17 +12,17 @@ export default function ClosingMagneticCta() {
   const ArrowIcon = isRTL ? ArrowLeft : ArrowRight;
 
   return (
-    <section className="py-18 lg:py-24 bg-[#ccede8]/30">
+    <section className="py-18 lg:py-24 bg-[#ccede8]/30 dark:bg-[#061a16] transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-white border-2 border-[#99dcd2] p-8 sm:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 shadow-sm">
+        <div className="rounded-3xl bg-white dark:bg-[#0b1e1b] border-2 border-[#99dcd2] dark:border-[#1e403a] p-8 sm:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 shadow-sm">
           <div className="max-w-2xl space-y-2.5">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-[#ccede8] border border-[#99dcd2] text-[#004339] text-xs font-bold">
+            <span className="inline-block px-3.5 py-1 rounded-full bg-[#ccede8] dark:bg-[#061a16] border border-[#99dcd2] dark:border-[#1e403a] text-[#004339] dark:text-[#99dcd2] text-xs font-bold">
               {t('closingCta.badge')}
             </span>
-            <h2 className="font-display font-bold text-2xl sm:text-3xl leading-snug text-[#00211c]">
+            <h2 className="font-display font-bold text-2xl sm:text-3xl leading-snug text-[#00211c] dark:text-white">
               {t('closingCta.title')}
             </h2>
-            <p className="text-sm sm:text-base text-[#004339]/80 leading-relaxed">
+            <p className="text-sm sm:text-base text-[#004339]/80 dark:text-[#99dcd2]/80 leading-relaxed">
               {t('closingCta.subtitle')}
             </p>
           </div>
@@ -40,7 +40,7 @@ export default function ClosingMagneticCta() {
 
             <Link
               href="/assistant"
-              className="inline-flex items-center gap-2 rounded-2xl bg-[#ccede8]/50 hover:bg-[#ccede8] border border-[#99dcd2] text-[#004339] px-5 py-3.5 text-sm font-bold transition-colors"
+              className="inline-flex items-center gap-2 rounded-2xl bg-[#ccede8]/50 dark:bg-[#061a16] hover:bg-[#ccede8] dark:hover:bg-[#132b26] border border-[#99dcd2] dark:border-[#1e403a] text-[#004339] dark:text-[#ccede8] px-5 py-3.5 text-sm font-bold transition-colors"
             >
               <MessageSquareText className="w-4 h-4 text-[#00a78e]" />
               <span>{t('closingCta.secondaryBtn')}</span>
