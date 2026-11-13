@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
 import { Sparkles } from 'lucide-react';
 import { opportunitiesSample } from '@/data/opportunitiesSample';
+import { useCustomOpportunities } from '@/data/pharmacyDashboardData';
 import OpportunitiesFilterBar from '@/components/opportunities/OpportunitiesFilterBar';
 import OpportunitiesResultRows from '@/components/opportunities/OpportunitiesResultRows';
 import lookingIllustration from '@/imgs/undraw_looking_for_answers.svg';
@@ -44,9 +45,12 @@ function OpportunitiesDirectoryContent() {
     router.replace(pathname, { scroll: false });
   };
 
+  const customOpportunities = useCustomOpportunities();
+
   const filteredOpportunities = useMemo(() => {
     const query = filters.q.trim().toLowerCase();
-    return opportunitiesSample.filter((opp) => {
+    const allOpportunities = [...customOpportunities, ...opportunitiesSample];
+    return allOpportunities.filter((opp) => {
       if (filters.sector && opp.sector !== filters.sector) return false;
       if (filters.city && opp.city !== filters.city) return false;
       if (filters.workingHours && opp.workingHours !== filters.workingHours) return false;
@@ -64,12 +68,12 @@ function OpportunitiesDirectoryContent() {
       }
       return true;
     });
-  }, [filters, pick]);
+  }, [filters, pick, customOpportunities]);
 
   return (
     <div className="min-h-screen bg-[#f6fbfa] dark:bg-[#051411] pb-18 transition-colors">
       {/* Mobile-Perfect Responsive Hero Header */}
-      <section className="bg-gradient-to-b from-[#ccede8]/45 via-[#f6fbfa] to-[#fce7f3]/25 dark:from-[#061a16] dark:via-[#051411] dark:to-[#1a0f18] border-b border-[#99dcd2]/70 dark:border-[#1e403a] py-5 sm:py-10">
+      <section className="bg-gradient-to-b from-[#ccede8]/45 via-[#f6fbfa] to-[#fde8eb]/25 dark:from-[#061a16] dark:via-[#051411] dark:to-[#1a0609] border-b border-[#99dcd2]/70 dark:border-[#1e403a] py-5 sm:py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-row items-center justify-between gap-3 sm:gap-8">
             <div className="flex-1 space-y-2 sm:space-y-3">
@@ -91,8 +95,8 @@ function OpportunitiesDirectoryContent() {
                   <span className="w-2 h-2 rounded-full bg-[#00a78e]" />
                   <span>{filteredOpportunities.length} {t('opportunitiesPage.resultsCount')}</span>
                 </span>
-                <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-[#fce7f3] dark:bg-[#831843]/30 border border-[#fbcfe8] dark:border-[#9d174d] text-[#9c1c47] dark:text-[#f472b6] font-semibold">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#d6336c]" />
+                <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-[#fde8eb] dark:bg-[#3d0009]/30 border border-[#f3b8c1] dark:border-[#7a0012] text-[#7a0012] dark:text-[#ff6b81] font-semibold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#a70019]" />
                   <span>{t('opportunitiesPage.tag1')}</span>
                 </span>
               </div>

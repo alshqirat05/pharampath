@@ -23,7 +23,7 @@ export default function HomeAboutSection() {
     },
     {
       icon: BookOpenCheck,
-      iconBg: 'bg-[#d6336c] text-white',
+      iconBg: 'bg-[#a70019] text-white',
       title: t('homeAbout.pillar2Title'),
       desc: t('homeAbout.pillar2Desc'),
     },
@@ -61,7 +61,7 @@ export default function HomeAboutSection() {
                 className="absolute w-52 h-52 rounded-full border border-[#66cabb]"
               >
                 <span className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#00a78e] shadow-sm" />
-                <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#d6336c] shadow-sm" />
+                <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#a70019] shadow-sm" />
               </motion.div>
 
               <motion.div
@@ -98,13 +98,13 @@ export default function HomeAboutSection() {
                       ease: 'easeInOut',
                     }}
                     className={`absolute ${nodePositions[idx]} z-20 rounded-2xl bg-white/95 dark:bg-[#061a16]/95 backdrop-blur-xs border ${
-                      isNahdiNode ? 'border-[#fbcfe8] dark:border-[#9d174d]' : 'border-[#99dcd2] dark:border-[#1e403a]'
+                      isNahdiNode ? 'border-[#f3b8c1] dark:border-[#7a0012]' : 'border-[#99dcd2] dark:border-[#1e403a]'
                     } px-3 py-2 shadow-sm flex items-center gap-2`}
                   >
                     <span
                       className={`w-7 h-7 rounded-xl flex items-center justify-center shrink-0 ${
                         isNahdiNode
-                          ? 'bg-[#fce7f3] dark:bg-[#831843]/40 text-[#d6336c] dark:text-[#f472b6]'
+                          ? 'bg-[#fde8eb] dark:bg-[#3d0009]/40 text-[#a70019] dark:text-[#ff6b81]'
                           : 'bg-[#ccede8] dark:bg-[#004339]/50 text-[#006455] dark:text-[#99dcd2]'
                       }`}
                     >

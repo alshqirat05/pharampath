@@ -1,9 +1,9 @@
 /*
- * Ottawa Falls Palette (#00a78e) + Subtle Nahdi Rose/Mauve Accents (#d6336c)
+ * Ottawa Falls Palette (#00a78e) + Subtle Nahdi Rose/Mauve Accents (#a70019)
  * Base Ottawa Falls: #00a78e
  * 20% Shades: #008672, #006455, #004339, #00211c
  * 20% Tints:  #33b9a5, #66cabb, #99dcd2, #ccede8
- * Subtle Nahdi Touches: #d6336c, #e64980, #f783ac, #fce7f3
+ * Subtle Nahdi Touches: #a70019, #c41e37, #e36478, #fde8eb
  */
 @import "tailwindcss";
 
@@ -38,10 +38,10 @@
   --color-ottawa-tint-4: #ccede8;
 
   /* Subtle Nahdi (Rose / Berry-Mauve) secondary accent tokens */
-  --color-nahdi: #d6336c;
-  --color-nahdi-light: #e64980;
-  --color-nahdi-tint: #f783ac;
-  --color-nahdi-soft: #fce7f3;
+  --color-nahdi: #a70019;
+  --color-nahdi-light: #c41e37;
+  --color-nahdi-tint: #e36478;
+  --color-nahdi-soft: #fde8eb;
 }
 
 :root {

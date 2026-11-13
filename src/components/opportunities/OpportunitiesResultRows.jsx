@@ -57,8 +57,8 @@ export default function OpportunitiesResultRows({ opportunities, onReset }) {
             <div className="min-w-0">
               <div className="flex items-center justify-between gap-2 mb-2.5">
                 <SectorTag sectorId={opp.sector} short />
-                <span className="shrink-0 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#fce7f3] dark:bg-[#831843]/30 text-[#9c1c47] dark:text-[#f472b6] border border-[#fbcfe8] dark:border-[#9d174d] text-[11px] font-bold">
-                  <Users className="w-3 h-3 text-[#d6336c]" />
+                <span className="shrink-0 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#fde8eb] dark:bg-[#3d0009]/30 text-[#7a0012] dark:text-[#ff6b81] border border-[#f3b8c1] dark:border-[#7a0012] text-[11px] font-bold">
+                  <Users className="w-3 h-3 text-[#a70019]" />
                   {opp.availablePositions} {t('latestOpportunities.positions')}
                 </span>
               </div>

@@ -1,7 +1,7 @@
 /**
  * Canonical definitions for the 4 pharmacy training sectors, cities,
  * working hours, and areas of professional interest.
- * Uses the Ottawa Falls (#00a78e) palette with a subtle touch of Nahdi rose (#d6336c).
+ * Uses the Ottawa Falls (#00a78e) palette with a subtle touch of Nahdi rose (#a70019).
  */
 
 export const SECTORS = [
@@ -22,10 +22,10 @@ export const SECTORS = [
   {
     id: 'hospital',
     index: '02',
-    badgeClass: 'bg-[#fce7f3] dark:bg-[#831843]/35 text-[#9c1c47] dark:text-[#f472b6] border-[#fbcfe8] dark:border-[#9d174d]',
-    activePillClass: 'bg-[#d6336c] text-white border-[#d6336c] shadow-xs',
+    badgeClass: 'bg-[#fde8eb] dark:bg-[#3d0009]/35 text-[#7a0012] dark:text-[#ff6b81] border-[#f3b8c1] dark:border-[#7a0012]',
+    activePillClass: 'bg-[#a70019] text-white border-[#a70019] shadow-xs',
     glareColor: 'rgba(214, 51, 108, 0.1)',
-    dotClass: 'bg-[#d6336c]',
+    dotClass: 'bg-[#a70019]',
     label: { ar: 'المستشفيات', en: 'Hospitals' },
     shortLabel: { ar: 'مستشفيات', en: 'Hospital' },
     oneLiner: {

@@ -6,8 +6,8 @@
 import { useMemo, useSyncExternalStore } from 'react';
 
 export const INITIAL_STUDENT_PROFILE = {
-  fullName: 'سارة أحمد الشقيرات',
-  fullNameEn: 'Sara Ahmad Al-Shqirat',
+  fullName: 'سارة منصور الشقيرات',
+  fullNameEn: 'Sara Mansour Alshqirat',
   email: 'sara.student@pharmapath.edu.jo',
   role: 'student',
   city: 'amman',
@@ -141,6 +141,7 @@ export const INITIAL_BOOKINGS_HISTORY = [
 
 const STORAGE_KEY_BOOKINGS = 'pharmapath_student_bookings';
 const STORAGE_KEY_PROFILE = 'pharmapath_student_profile';
+const STORAGE_KEY_AUTH = 'pharmapath_is_registered';
 const STORE_EVENT = 'pharmapath-store';
 
 const isBrowser = () => typeof window !== 'undefined';
@@ -160,12 +161,38 @@ function writeJSON(key, value) {
   window.dispatchEvent(new Event(STORE_EVENT));
 }
 
+function sanitizeProfile(profile) {
+  if (!profile || typeof profile !== 'object') return profile;
+  let changed = false;
+  let { fullName, fullNameEn } = profile;
+  if (typeof fullName === 'string' && fullName.includes('أحمد')) {
+    fullName = fullName.replace(/أحمد\s*/g, 'منصور ');
+    changed = true;
+  }
+  if (typeof fullNameEn === 'string' && /ahmad/i.test(fullNameEn)) {
+    fullNameEn = fullNameEn.replace(/ahmad\s*/gi, 'Mansour ').replace(/Al-Shqirat/gi, 'Alshqirat');
+    changed = true;
+  }
+  if (changed) {
+    const updated = { ...profile, fullName, fullNameEn };
+    if (isBrowser()) {
+      try {
+        localStorage.setItem(STORAGE_KEY_PROFILE, JSON.stringify(updated));
+      } catch {
+        // Ignore storage errors
+      }
+    }
+    return updated;
+  }
+  return profile;
+}
+
 export function getStoredBookings() {
   return readJSON(STORAGE_KEY_BOOKINGS, INITIAL_BOOKINGS_HISTORY);
 }
 
 export function getStoredProfile() {
-  return readJSON(STORAGE_KEY_PROFILE, INITIAL_STUDENT_PROFILE);
+  return sanitizeProfile(readJSON(STORAGE_KEY_PROFILE, INITIAL_STUDENT_PROFILE));
 }
 
 export function saveBooking(opp) {
@@ -226,11 +253,32 @@ function useStoredValue(key, fallback) {
   return useMemo(() => {
     if (!raw) return fallback;
     try {
-      return JSON.parse(raw);
+      const parsed = JSON.parse(raw);
+      if (key === STORAGE_KEY_PROFILE) {
+        return sanitizeProfile(parsed);
+      }
+      return parsed;
     } catch {
       return fallback;
     }
   }, [raw, fallback]);
+}
+
+export function getUserRegistered() {
+  return Boolean(readJSON(STORAGE_KEY_AUTH, false));
+}
+
+export function setUserRegistered(value) {
+  if (!isBrowser()) return;
+  try {
+    writeJSON(STORAGE_KEY_AUTH, Boolean(value));
+  } catch {
+    // Ignore storage errors
+  }
+}
+
+export function useUserRegistered() {
+  return Boolean(useStoredValue(STORAGE_KEY_AUTH, false));
 }
 
 export function useStudentProfile() {

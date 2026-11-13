@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
 import { CheckCircle2, Sparkles, GraduationCap, Building2, ShieldCheck, HeartPulse } from 'lucide-react';
 import InputField from '@/components/ui/InputField';
+import { setUserRegistered } from '@/data/studentDashboardData';
 import medicineIllustration from '@/imgs/undraw_medicine_hqqg.svg';
 
 export default function LoginScreen() {
@@ -24,8 +25,9 @@ export default function LoginScreen() {
     if (!email.trim() || !password.trim()) return;
     setSubmitted(true);
     setLoading(true);
+    setUserRegistered(true);
     setTimeout(() => {
-      router.push('/dashboard');
+      router.push(role === 'coordinator' ? '/pharmacy-dashboard' : '/dashboard');
     }, 500);
   };
 
@@ -37,7 +39,7 @@ export default function LoginScreen() {
           <div className="hidden lg:flex lg:col-span-5 relative overflow-hidden rounded-3xl border border-[#99dcd2]/70 dark:border-[#1e403a] bg-gradient-to-br from-[#e7f7f4] via-[#f1faf8] to-white dark:from-[#09221d] dark:via-[#0c2822] dark:to-[#061714] p-6 sm:p-8 flex-col justify-between shadow-xs">
             {/* Ambient Background Glows */}
             <div className="pointer-events-none absolute -top-16 -start-16 w-52 h-52 rounded-full bg-[#00a78e]/15 blur-3xl dark:bg-[#00a78e]/20" />
-            <div className="pointer-events-none absolute -bottom-16 -end-16 w-56 h-56 rounded-full bg-[#99dcd2]/30 blur-3xl dark:bg-[#00a78e]/10" />
+            <div className="pointer-events-none absolute -bottom-16 -end-16 w-56 h-56 rounded-full bg-[#a70019]/10 blur-3xl dark:bg-[#a70019]/15" />
 
             {/* Top Brand Pill */}
             <div className="relative z-10 flex items-center justify-between">
@@ -45,8 +47,8 @@ export default function LoginScreen() {
                 <Sparkles className="w-3.5 h-3.5 text-[#00a78e]" />
                 <span>PharmaPath</span>
               </span>
-              <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#006455]/70 dark:text-[#99dcd2]/70">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#00a78e]" />
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full border border-[#f3b8c1] bg-[#fde8eb]/80 text-[#7a0012] dark:border-[#7a0012]/50 dark:bg-[#3d0009]/40 dark:text-[#ff6b81] text-[11px] font-semibold">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#a70019] dark:text-[#ff6b81]" />
                 <span>Portal</span>
               </span>
             </div>
@@ -70,7 +72,7 @@ export default function LoginScreen() {
             {/* Bottom Insight Card */}
             <div className="relative z-10 pt-4 border-t border-[#99dcd2]/40 dark:border-[#1e403a]/70">
               <div className="flex items-start gap-2.5">
-                <div className="p-1.5 rounded-lg bg-[#00a78e]/10 dark:bg-[#00a78e]/20 text-[#00a78e] shrink-0 mt-0.5">
+                <div className="p-1.5 rounded-lg bg-[#fde8eb] border border-[#f3b8c1] text-[#a70019] dark:bg-[#3d0009]/40 dark:border-[#7a0012]/60 dark:text-[#ff6b81] shrink-0 mt-0.5">
                   <HeartPulse className="w-4 h-4" />
                 </div>
                 <div>
@@ -87,7 +89,8 @@ export default function LoginScreen() {
 
           {/* Form Card */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-            <div className="rounded-3xl border border-[#99dcd2] dark:border-[#1e403a] bg-white dark:bg-[#0b1e1b] p-7 sm:p-9 shadow-xs">
+            <div className="rounded-3xl border border-[#dcefea] dark:border-[#1e403a] bg-white dark:bg-[#0b1e1b] shadow-xs">
+              <div className="p-7 sm:p-9">
               <div className="mb-6">
                 <h1 className="font-display text-2xl sm:text-3xl font-bold text-[#00211c] dark:text-white mb-2">
                   {t('authPages.loginTitle')}
@@ -210,14 +213,15 @@ export default function LoginScreen() {
               </form>
 
               {/* Switch to Register Section */}
-              <div className="mt-6 pt-5 border-t border-[#ccede8] dark:border-[#1e403a] text-xs text-[#004339]/80 dark:text-[#99dcd2]/80 flex items-center justify-between">
+              <div className="mt-6 pt-5 border-t border-[#eef7f5] dark:border-[#1e403a] text-xs text-[#004339]/80 dark:text-[#99dcd2]/80 flex items-center justify-between">
                 <span>{t('authPages.switchToRegister')}</span>
                 <Link
                   href="/auth/register"
-                  className="font-bold text-[#00a78e] dark:text-[#33b9a5] hover:underline"
+                  className="font-bold text-[#a70019] dark:text-[#ff6b81] hover:underline"
                 >
                   {t('authPages.registerSubmit')}
                 </Link>
+              </div>
               </div>
             </div>
           </div>

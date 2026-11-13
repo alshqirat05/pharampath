@@ -168,5 +168,20 @@ export const opportunitiesSample = [
 ];
 
 export function getOpportunityById(id) {
-  return opportunitiesSample.find((opp) => opp.id === id) || null;
+  const fromSample = opportunitiesSample.find((opp) => opp.id === id);
+  if (fromSample) return fromSample;
+  if (typeof window !== 'undefined') {
+    try {
+      const raw = localStorage.getItem('pharmapath_custom_opportunities');
+      if (raw) {
+        const custom = JSON.parse(raw);
+        if (Array.isArray(custom)) {
+          return custom.find((opp) => opp.id === id) || null;
+        }
+      }
+    } catch {
+      // Ignore storage errors
+    }
+  }
+  return null;
 }

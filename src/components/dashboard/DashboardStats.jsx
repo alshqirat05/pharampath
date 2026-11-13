@@ -4,10 +4,15 @@ import { useTranslation } from 'react-i18next';
 import { CalendarCheck, CalendarDays, Hourglass, Inbox } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageProvider';
 
-function Stat({ icon: Icon, label, value, unit, hint }) {
+function Stat({ icon: Icon, label, value, unit, hint, tone = 'teal' }) {
+  const iconTone =
+    tone === 'rose'
+      ? 'border-[#f3b8c1] bg-[#fde8eb]/75 text-[#a70019] dark:border-[#7a0012]/50 dark:bg-[#3d0009]/25 dark:text-[#ff6b81]'
+      : 'border-[#d5eee9] bg-[#eef8f6] text-[#00a78e] dark:border-[#1e403a] dark:bg-[#10291f] dark:text-[#5fd3bf]';
+
   return (
     <div className="flex items-start gap-3.5 bg-white p-4 dark:bg-[#0b1e1b] sm:p-5">
-      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#d5eee9] bg-[#eef8f6] text-[#00a78e] dark:border-[#1e403a] dark:bg-[#10291f] dark:text-[#5fd3bf]">
+      <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border ${iconTone}`}>
         <Icon className="h-[18px] w-[18px]" />
       </span>
       <div className="min-w-0 flex-1">
@@ -37,6 +42,7 @@ export default function DashboardStats({ placement, bookings }) {
         value={countdown.remainingDays}
         unit={t('dashboard.stats.daysUnit')}
         hint={t('dashboard.stats.untilEnd', { date: countdown.endDate })}
+        tone="rose"
       />
       <Stat
         icon={CalendarCheck}

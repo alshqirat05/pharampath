@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 /**
  * Autonomous floating 3D pharmaceutical & geometric shapes behind the Hero box
- * Styled in Ottawa Falls (#00a78e) with subtle Nahdi rose (#d6336c / #f783ac) accents.
+ * Styled in Ottawa Falls (#00a78e) with subtle Nahdi rose (#a70019 / #e36478) accents.
  */
 export default function HeroFloatingBackdrop() {
   return (
@@ -21,7 +21,7 @@ export default function HeroFloatingBackdrop() {
       <motion.div
         animate={{ scale: [1.05, 0.9, 1.05], x: [15, -15, 15] }}
         transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute top-1/4 end-1/4 w-64 h-64 rounded-full bg-[#fbcfe8]/45 blur-3xl"
+        className="absolute top-1/4 end-1/4 w-64 h-64 rounded-full bg-[#f3b8c1]/45 blur-3xl"
       />
       <motion.div
         animate={{ scale: [1.1, 0.92, 1.1], x: [20, -20, 20], y: [15, -15, 15] }}
@@ -36,7 +36,7 @@ export default function HeroFloatingBackdrop() {
         className="absolute top-4 start-4 sm:start-10 w-52 h-52 sm:w-68 sm:h-68 rounded-full border-2 border-dashed border-[#33b9a5]/45"
       >
         <span className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#00a78e] shadow-md" />
-        <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#d6336c]" />
+        <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#a70019]" />
       </motion.div>
 
       {/* Large Rotating Orbital Ring Behind Bottom-End Corner of Hero Box */}
@@ -45,7 +45,7 @@ export default function HeroFloatingBackdrop() {
         transition={{ duration: 38, repeat: Infinity, ease: 'linear' }}
         className="absolute bottom-4 end-4 sm:end-10 w-56 h-56 sm:w-72 sm:h-72 rounded-full border-2 border-[#66cabb]/50"
       >
-        <span className="absolute top-1/2 -start-2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#d6336c]" />
+        <span className="absolute top-1/2 -start-2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#a70019]" />
       </motion.div>
 
       {/* Floating 3D Pharmaceutical Capsule 1 (Top-Start — Ottawa Falls) */}
@@ -64,8 +64,8 @@ export default function HeroFloatingBackdrop() {
         transition={{ duration: 6.4, repeat: Infinity, ease: 'easeInOut' }}
         className="absolute bottom-14 start-8 sm:start-20 lg:start-28 w-20 h-8 rounded-full border-2 border-white shadow-[0_12px_24px_rgba(214,51,108,0.2)] flex overflow-hidden"
       >
-        <span className="w-1/2 h-full bg-[#d6336c]" />
-        <span className="w-1/2 h-full bg-[#fce7f3]" />
+        <span className="w-1/2 h-full bg-[#a70019]" />
+        <span className="w-1/2 h-full bg-[#fde8eb]" />
       </motion.div>
 
       {/* Floating 3D Pharmaceutical Capsule 3 (Top-End — Ottawa + Nahdi) */}
@@ -82,7 +82,7 @@ export default function HeroFloatingBackdrop() {
       <motion.div
         animate={{ y: [-22, 22, -22], x: [-8, 8, -8] }}
         transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute top-1/2 end-4 sm:end-12 lg:end-20 w-15 h-15 rounded-full bg-gradient-to-br from-white via-[#fbcfe8] to-[#e64980] border-2 border-white shadow-[0_14px_28px_rgba(214,51,108,0.22)]"
+        className="absolute top-1/2 end-4 sm:end-12 lg:end-20 w-15 h-15 rounded-full bg-gradient-to-br from-white via-[#f3b8c1] to-[#c41e37] border-2 border-white shadow-[0_14px_28px_rgba(214,51,108,0.22)]"
       />
 
       {/* Floating 3D Medical Cross / Plus Shape (Mid-Start) */}

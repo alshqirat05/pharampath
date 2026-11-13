@@ -15,7 +15,6 @@ export const siteConfig = {
   navLinks: [
     { labelKey: 'nav.home', href: '/' },
     { labelKey: 'nav.opportunities', href: '/opportunities' },
-    { labelKey: 'nav.assistant', href: '/assistant' },
     { labelKey: 'nav.references', href: '/references' },
     { labelKey: 'nav.about', href: '/about' },
   ],

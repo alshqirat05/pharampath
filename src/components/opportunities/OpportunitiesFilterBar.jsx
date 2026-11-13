@@ -41,7 +41,7 @@ export default function OpportunitiesFilterBar({ filters, onUpdateFilter, onRese
             type="button"
             onClick={() => onUpdateFilter('q', '')}
             aria-label="Clear search"
-            className="absolute end-3 top-1/2 -translate-y-1/2 text-[#004339]/60 dark:text-[#99dcd2]/60 hover:text-[#d6336c] cursor-pointer"
+            className="absolute end-3 top-1/2 -translate-y-1/2 text-[#004339]/60 dark:text-[#99dcd2]/60 hover:text-[#a70019] cursor-pointer"
           >
             <X className="w-4 h-4" />
           </button>
@@ -171,7 +171,7 @@ export default function OpportunitiesFilterBar({ filters, onUpdateFilter, onRese
           <button
             type="button"
             onClick={onReset}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-[#9c1c47] dark:text-[#f472b6] bg-[#fce7f3] dark:bg-[#831843]/30 hover:bg-[#fbcfe8] dark:hover:bg-[#831843]/50 border border-[#fbcfe8] dark:border-[#9d174d] transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-[#7a0012] dark:text-[#ff6b81] bg-[#fde8eb] dark:bg-[#3d0009]/30 hover:bg-[#f3b8c1] dark:hover:bg-[#3d0009]/50 border border-[#f3b8c1] dark:border-[#7a0012] transition-colors cursor-pointer"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             <span>{t('opportunitiesPage.resetFilters')}</span>

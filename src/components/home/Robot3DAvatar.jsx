@@ -32,7 +32,7 @@ export default function Robot3DAvatar({ isTyping = false }) {
           rotateZ: { duration: 10, repeat: Infinity, ease: 'linear' },
           rotateY: { duration: 5, repeat: Infinity, ease: 'easeInOut' },
         }}
-        className="absolute w-44 h-44 rounded-full border border-[#33b9a5]/50 pointer-events-none"
+        className="absolute w-44 h-44 rounded-full border border-[#a70019]/40 pointer-events-none"
       />
 
       {/* Main 3D Floating Robot Assembly */}
@@ -56,16 +56,16 @@ export default function Robot3DAvatar({ isTyping = false }) {
               scale: isTyping ? [1, 1.35, 1] : [1, 1.15, 1],
               boxShadow: isTyping
                 ? [
-                    '0 0 8px rgba(0,167,142,0.6)',
-                    '0 0 22px rgba(0,167,142,0.95)',
-                    '0 0 8px rgba(0,167,142,0.6)',
+                    '0 0 8px rgba(167,0,25,0.6)',
+                    '0 0 22px rgba(167,0,25,0.95)',
+                    '0 0 8px rgba(167,0,25,0.6)',
                   ]
-                : '0 0 12px rgba(0,167,142,0.5)',
+                : '0 0 12px rgba(167,0,25,0.5)',
             }}
             transition={{ duration: isTyping ? 0.7 : 2, repeat: Infinity }}
-            className="w-4 h-4 rounded-full bg-gradient-to-tr from-[#00a78e] to-[#66cabb] border-2 border-white"
+            className="w-4 h-4 rounded-full bg-gradient-to-tr from-[#a70019] to-[#e36478] border-2 border-white"
           />
-          <div className="w-1.5 h-4 bg-gradient-to-b from-[#00a78e] to-[#66cabb] rounded-full" />
+          <div className="w-1.5 h-4 bg-gradient-to-b from-[#a70019] to-[#66cabb] rounded-full" />
         </div>
 
         {/* 3D Robot Head Slab */}
@@ -109,7 +109,7 @@ export default function Robot3DAvatar({ isTyping = false }) {
                     repeat: Infinity,
                     delay: bar * 0.08,
                   }}
-                  className="w-1 rounded-full bg-[#99dcd2]"
+                  className="w-1 rounded-full bg-[#ff6b81]"
                 />
               ))}
             </div>
@@ -134,11 +134,11 @@ export default function Robot3DAvatar({ isTyping = false }) {
           <motion.div
             animate={{ scale: [1, 1.08, 1] }}
             transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-12 h-12 rounded-2xl bg-[#ccede8] border border-[#66cabb] flex items-center justify-center shadow-inner"
+            className="w-12 h-12 rounded-2xl bg-[#fde8eb] border border-[#f3b8c1] flex items-center justify-center shadow-inner"
           >
             <div className="relative w-5 h-5 flex items-center justify-center">
-              <span className="absolute w-5 h-1.5 rounded-full bg-[#00a78e]" />
-              <span className="absolute w-1.5 h-5 rounded-full bg-[#00a78e]" />
+              <span className="absolute w-5 h-1.5 rounded-full bg-[#a70019]" />
+              <span className="absolute w-1.5 h-5 rounded-full bg-[#a70019]" />
             </div>
           </motion.div>
         </div>

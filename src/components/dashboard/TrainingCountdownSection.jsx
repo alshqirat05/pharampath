@@ -132,10 +132,12 @@ export default function TrainingCountdownSection({ placement }) {
         {steps.map((step) => (
           <li key={step.key} className="relative flex flex-col items-center text-center">
             <span
-              className={`flex h-8 w-8 items-center justify-center rounded-full ring-4 ring-white dark:ring-[#0b1e1b] ${
+              className={`flex h-8 w-8 items-center justify-center rounded-full ring-4 ${
                 step.state === 'upcoming'
-                  ? 'border border-[#cfe6e1] bg-[#f8fcfb] text-[#4f6f69] dark:border-[#1e403a] dark:bg-[#0d231f] dark:text-[#8fb8b0]'
-                  : 'bg-[#00a78e] text-white'
+                  ? 'border border-[#cfe6e1] bg-[#f8fcfb] text-[#4f6f69] ring-white dark:border-[#1e403a] dark:bg-[#0d231f] dark:text-[#8fb8b0] dark:ring-[#0b1e1b]'
+                  : step.state === 'current'
+                    ? 'bg-[#a70019] text-white ring-[#fde8eb] dark:ring-[#3d0009]/40'
+                    : 'bg-[#00a78e] text-white ring-white dark:ring-[#0b1e1b]'
               }`}
             >
               {step.state === 'upcoming' ? (

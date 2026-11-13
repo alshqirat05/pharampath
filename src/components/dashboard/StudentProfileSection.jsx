@@ -95,7 +95,13 @@ export default function StudentProfileSection({
             return (
               <div key={item.key} className="flex items-center justify-between gap-3 px-3.5 py-3">
                 <dt className="flex items-center gap-2 text-xs text-[#4f6f69] dark:text-[#8fb8b0] shrink-0">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-lg border border-[#d5eee9] bg-[#eef8f6] text-[#00a78e] dark:border-[#1e403a] dark:bg-[#10291f] dark:text-[#5fd3bf]">
+                  <span
+                    className={`flex h-7 w-7 items-center justify-center rounded-lg border ${
+                      item.key === 'city'
+                        ? 'border-[#f3b8c1] bg-[#fde8eb]/75 text-[#a70019] dark:border-[#7a0012]/50 dark:bg-[#3d0009]/25 dark:text-[#ff6b81]'
+                        : 'border-[#d5eee9] bg-[#eef8f6] text-[#00a78e] dark:border-[#1e403a] dark:bg-[#10291f] dark:text-[#5fd3bf]'
+                    }`}
+                  >
                     <Icon className="h-3.5 w-3.5" />
                   </span>
                   <span>{item.label}</span>

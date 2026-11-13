@@ -7,10 +7,12 @@ import { MessageSquareText, BookOpen, ShieldAlert, ExternalLink, ArrowLeft, Arro
 import { DEMO_QA } from '@/data/assistantPromptsSample';
 import Robot3DAvatar from './Robot3DAvatar';
 import { useLanguage } from '@/context/LanguageProvider';
+import { useAssistantWidget } from '@/context/AssistantWidgetContext';
 
 export default function AssistantDemoSection() {
   const { t } = useTranslation('common');
   const { language, isRTL } = useLanguage();
+  const { openAssistant } = useAssistantWidget();
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [charCount, setCharCount] = useState(0);
 
@@ -50,7 +52,7 @@ export default function AssistantDemoSection() {
               <MessageSquareText className="w-3.5 h-3.5 text-[#00a78e]" />
               {t('assistantDemo.badge')}
             </span>
-            <span className="text-xs font-bold text-[#9c1c47] dark:text-[#f472b6] bg-[#fce7f3] dark:bg-[#831843]/30 border border-[#fbcfe8] dark:border-[#9d174d] px-3 py-1 rounded-full">
+            <span className="text-xs font-bold text-[#7a0012] dark:text-[#ff6b81] bg-[#fde8eb] dark:bg-[#3d0009]/30 border border-[#f3b8c1] dark:border-[#7a0012] px-3 py-1 rounded-full">
               {t('assistantDemo.demoTag')}
             </span>
           </div>
@@ -94,18 +96,19 @@ export default function AssistantDemoSection() {
             </div>
 
             <div className="mt-6 pt-4 border-t border-[#99dcd2] dark:border-[#1e403a] flex flex-wrap items-center gap-3">
-              <Link
-                href="/assistant"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#006455] hover:bg-[#004339] text-white px-5 py-2.5 text-xs sm:text-sm font-bold transition-colors"
+              <button
+                type="button"
+                onClick={openAssistant}
+                className="inline-flex items-center gap-2 rounded-xl bg-[#a70019] hover:bg-[#8a0015] text-white px-5 py-2.5 text-xs sm:text-sm font-bold transition-colors cursor-pointer shadow-xs"
               >
                 <span>{t('assistantDemo.cta')}</span>
                 <ArrowIcon className="w-4 h-4" />
-              </Link>
+              </button>
               <Link
                 href="/references"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#006455] dark:text-[#99dcd2] hover:text-[#d6336c] px-2 py-2 transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#006455] dark:text-[#99dcd2] hover:text-[#a70019] px-2 py-2 transition-colors"
               >
-                <BookOpen className="w-4 h-4 text-[#d6336c]" />
+                <BookOpen className="w-4 h-4 text-[#a70019]" />
                 <span>{t('assistantDemo.referencesCta')}</span>
               </Link>
             </div>
@@ -125,13 +128,13 @@ export default function AssistantDemoSection() {
 
               <div className="rounded-2xl rounded-es-sm bg-white dark:bg-[#0b1e1b] border border-[#99dcd2] dark:border-[#1e403a] p-5 shadow-2xs">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#008672] dark:text-[#33b9a5]">
+                  <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#a70019] dark:text-[#ff6b81]">
                     <MessageSquareText className="w-3.5 h-3.5" />
                     {t('assistantDemo.assistantLabel')}
                   </span>
                   {isTyping && (
-                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#d6336c]">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#d6336c] animate-ping" />
+                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#a70019]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#a70019] animate-ping" />
                       {t('assistantPage.thinking')}
                     </span>
                   )}
@@ -140,7 +143,7 @@ export default function AssistantDemoSection() {
                 <p className="text-sm sm:text-base text-[#00211c] dark:text-[#e8f7f4] leading-relaxed min-h-[5.5rem] mb-4">
                   {fullAnswer.slice(0, charCount)}
                   {isTyping && (
-                    <span className="inline-block w-1.5 h-4 ms-1 align-middle bg-[#d6336c] animate-pulse" />
+                    <span className="inline-block w-1.5 h-4 ms-1 align-middle bg-[#a70019] animate-pulse" />
                   )}
                 </p>
 
@@ -167,7 +170,7 @@ export default function AssistantDemoSection() {
             </div>
 
             <div className="mt-6 rounded-2xl bg-white dark:bg-[#0b1e1b] border border-[#99dcd2] dark:border-[#1e403a] px-4 py-3 flex items-start gap-2.5">
-              <ShieldAlert className="w-4 h-4 text-[#d6336c] shrink-0 mt-0.5" />
+              <ShieldAlert className="w-4 h-4 text-[#a70019] shrink-0 mt-0.5" />
               <p className="text-xs text-[#004339] dark:text-[#99dcd2] leading-relaxed">
                 <strong className="font-bold text-[#00211c] dark:text-white">{t('disclaimer.label')}: </strong>
                 {t('disclaimer.text')}

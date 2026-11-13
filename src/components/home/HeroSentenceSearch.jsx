@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform, useSpring } from 'motion/react';
@@ -9,10 +8,12 @@ import { Search, MapPin, Building2, Clock, Sparkles, ArrowLeft, ArrowRight } fro
 import { SECTORS, CITIES, WORKING_HOURS_OPTIONS } from '@/data/sectorsConfig';
 import HeroFloatingBackdrop from './HeroFloatingBackdrop';
 import { useLanguage } from '@/context/LanguageProvider';
+import { useAssistantWidget } from '@/context/AssistantWidgetContext';
 
 export default function HeroSentenceSearch() {
   const { t } = useTranslation('common');
   const { pick, isRTL } = useLanguage();
+  const { openAssistant } = useAssistantWidget();
   const router = useRouter();
   const heroRef = useRef(null);
 
@@ -63,7 +64,7 @@ export default function HeroSentenceSearch() {
           <motion.div
             animate={{ rotate: -360 }}
             transition={{ duration: 42, repeat: Infinity, ease: 'linear' }}
-            className="pointer-events-none absolute -bottom-40 -start-40 w-96 h-96 rounded-full border border-[#f783ac]/30"
+            className="pointer-events-none absolute -bottom-40 -start-40 w-96 h-96 rounded-full border border-[#e36478]/30"
           />
 
           <div className="relative z-10 max-w-3xl mx-auto space-y-6">
@@ -72,7 +73,7 @@ export default function HeroSentenceSearch() {
                 <motion.span
                   animate={{ scale: [1, 1.4, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
-                  className="w-2 h-2 rounded-full bg-[#d6336c]"
+                  className="w-2 h-2 rounded-full bg-[#a70019]"
                 />
                 {t('hero.badge')}
               </span>
@@ -111,7 +112,7 @@ export default function HeroSentenceSearch() {
 
                 <label className="block">
                   <span className="flex items-center gap-1.5 text-xs font-bold text-[#004339] dark:text-[#ccede8] mb-1.5">
-                    <Building2 className="w-3.5 h-3.5 text-[#d6336c]" />
+                    <Building2 className="w-3.5 h-3.5 text-[#a70019]" />
                     {t('hero.sectorLabel')}
                   </span>
                   <select
@@ -145,14 +146,15 @@ export default function HeroSentenceSearch() {
               </div>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-3 border-t border-[#99dcd2]/70 dark:border-[#1e403a]">
-                <Link
-                  href="/assistant"
-                  className="inline-flex items-center justify-center sm:justify-start gap-2 text-xs font-bold text-[#006455] dark:text-[#99dcd2] hover:text-[#d6336c] py-1.5 transition-colors"
+                <button
+                  type="button"
+                  onClick={openAssistant}
+                  className="inline-flex items-center justify-center sm:justify-start gap-2 text-xs font-bold text-[#006455] dark:text-[#99dcd2] hover:text-[#a70019] py-1.5 transition-colors cursor-pointer"
                 >
-                  <Sparkles className="w-4 h-4 text-[#d6336c]" />
+                  <Sparkles className="w-4 h-4 text-[#a70019]" />
                   <span>{t('hero.assistantBtn')}</span>
                   <ArrowIcon className="w-3.5 h-3.5" />
-                </Link>
+                </button>
 
                 <button
                   type="submit"

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { Compass, GraduationCap, LogOut, PencilLine } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageProvider';
+import { setUserRegistered } from '@/data/studentDashboardData';
 
 export default function DashboardHeader({ profile, onEditProfile }) {
   const { t } = useTranslation('common');
@@ -27,7 +28,10 @@ export default function DashboardHeader({ profile, onEditProfile }) {
         </div>
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs font-semibold text-[#00a78e]">{t('dashboard.pageLabel')}</span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#f3b8c1] bg-[#fde8eb]/75 px-2.5 py-0.5 text-[11px] font-semibold text-[#7a0012] dark:border-[#7a0012]/50 dark:bg-[#3d0009]/30 dark:text-[#ff6b81]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#a70019]" />
+              {t('dashboard.pageLabel')}
+            </span>
             <span className="inline-flex items-center gap-1 rounded-full border border-[#cdebe5] bg-[#eef8f6] px-2.5 py-0.5 text-[11px] font-semibold text-[#006455] dark:border-[#1e403a] dark:bg-[#10291f] dark:text-[#99dcd2]">
               <GraduationCap className="h-3 w-3 text-[#00a78e]" />
               <span>{roleText}</span>
@@ -60,7 +64,8 @@ export default function DashboardHeader({ profile, onEditProfile }) {
         </button>
         <Link
           href="/auth/login"
-          className="inline-flex h-10 items-center justify-center gap-1.5 rounded-xl border border-[#dcefea] bg-white px-3.5 text-xs font-medium text-[#4f6f69] transition-colors hover:border-[#00a78e] hover:text-[#00211c] dark:border-[#1e403a] dark:bg-[#0b1e1b] dark:text-[#8fb8b0] dark:hover:text-white sm:px-4 sm:text-sm"
+          onClick={() => setUserRegistered(false)}
+          className="inline-flex h-10 items-center justify-center gap-1.5 rounded-xl border border-[#dcefea] bg-white px-3.5 text-xs font-medium text-[#4f6f69] transition-colors hover:border-[#e36478] hover:bg-[#fde8eb]/40 hover:text-[#7a0012] dark:border-[#1e403a] dark:bg-[#0b1e1b] dark:text-[#8fb8b0] dark:hover:border-[#7a0012]/60 dark:hover:text-[#ff6b81] sm:px-4 sm:text-sm"
         >
           <LogOut className="h-4 w-4 shrink-0 rtl:-scale-x-100" />
           <span className="truncate">{t('dashboard.actions.logout')}</span>

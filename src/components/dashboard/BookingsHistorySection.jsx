@@ -23,8 +23,8 @@ const STATUS_STYLE = {
   rejected: {
     icon: XCircle,
     badge:
-      'border-[#fbcfe8] bg-[#fce7f3]/70 text-[#9c1c47] dark:border-[#9d174d]/60 dark:bg-[#831843]/30 dark:text-[#f472b6]',
-    dot: 'bg-[#d6336c]',
+      'border-[#f3b8c1] bg-[#fde8eb]/70 text-[#7a0012] dark:border-[#7a0012]/60 dark:bg-[#3d0009]/30 dark:text-[#ff6b81]',
+    dot: 'bg-[#a70019]',
   },
 };
 

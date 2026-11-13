@@ -3,6 +3,7 @@
 import React from 'react';
 import { LanguageProvider } from '@/context/LanguageProvider';
 import { ThemeProvider } from '@/context/ThemeProvider';
+import { AssistantWidgetProvider } from '@/context/AssistantWidgetContext';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
 import AssistantFloatingLauncher from './AssistantFloatingLauncher';
@@ -15,12 +16,14 @@ export default function RootShell({ children }) {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <SiteHeader />
-        <main id="main-content" className="flex-1">
-          {children}
-        </main>
-        <AssistantFloatingLauncher />
-        <SiteFooter />
+        <AssistantWidgetProvider>
+          <SiteHeader />
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
+          <AssistantFloatingLauncher />
+          <SiteFooter />
+        </AssistantWidgetProvider>
       </LanguageProvider>
     </ThemeProvider>
   );

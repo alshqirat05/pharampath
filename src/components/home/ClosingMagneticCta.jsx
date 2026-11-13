@@ -5,10 +5,12 @@ import { useTranslation } from 'react-i18next';
 import { ArrowLeft, ArrowRight, MessageSquareText } from 'lucide-react';
 import MagneticButton from '@/motion/MagneticButton';
 import { useLanguage } from '@/context/LanguageProvider';
+import { useAssistantWidget } from '@/context/AssistantWidgetContext';
 
 export default function ClosingMagneticCta() {
   const { t } = useTranslation('common');
   const { isRTL } = useLanguage();
+  const { openAssistant } = useAssistantWidget();
   const ArrowIcon = isRTL ? ArrowLeft : ArrowRight;
 
   return (
@@ -38,13 +40,14 @@ export default function ClosingMagneticCta() {
               </Link>
             </MagneticButton>
 
-            <Link
-              href="/assistant"
-              className="inline-flex items-center gap-2 rounded-2xl bg-[#ccede8]/50 dark:bg-[#061a16] hover:bg-[#ccede8] dark:hover:bg-[#132b26] border border-[#99dcd2] dark:border-[#1e403a] text-[#004339] dark:text-[#ccede8] px-5 py-3.5 text-sm font-bold transition-colors"
+            <button
+              type="button"
+              onClick={openAssistant}
+              className="inline-flex items-center gap-2 rounded-2xl bg-[#ccede8]/50 dark:bg-[#061a16] hover:bg-[#ccede8] dark:hover:bg-[#132b26] border border-[#99dcd2] dark:border-[#1e403a] text-[#004339] dark:text-[#ccede8] px-5 py-3.5 text-sm font-bold transition-colors cursor-pointer"
             >
               <MessageSquareText className="w-4 h-4 text-[#00a78e]" />
               <span>{t('closingCta.secondaryBtn')}</span>
-            </Link>
+            </button>
           </div>
         </div>
       </div>

@@ -46,7 +46,7 @@ export default function AcceptedPharmacySection({ placement }) {
               <p className="mt-0.5 truncate text-xs text-[#4f6f69] dark:text-[#8fb8b0]">{pick(placement.branch)}</p>
             </div>
           </div>
-          <span className="shrink-0 rounded-full border border-[#cdebe5] bg-[#eef8f6] px-2.5 py-0.5 text-[11px] font-semibold text-[#006455] dark:border-[#1e403a] dark:bg-[#10291f] dark:text-[#99dcd2]">
+          <span className="shrink-0 rounded-full border border-[#f3b8c1] bg-[#fde8eb]/75 px-2.5 py-0.5 text-[11px] font-semibold text-[#7a0012] dark:border-[#7a0012]/50 dark:bg-[#3d0009]/30 dark:text-[#ff6b81]">
             {t(`sectors.${placement.sector}.short`)}
           </span>
         </div>
@@ -54,7 +54,7 @@ export default function AcceptedPharmacySection({ placement }) {
         {/* Location & Shift Hours */}
         <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
           <div className="flex items-start gap-2.5 rounded-xl border border-[#eef7f5] bg-white p-3 dark:border-[#16332d] dark:bg-[#0b1e1b]">
-            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#00a78e]" />
+            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#a70019]" />
             <div className="min-w-0">
               <p className="text-[11px] text-[#4f6f69] dark:text-[#8fb8b0]">{t('dashboard.pharmacy.location')}</p>
               <p className="mt-0.5 text-xs font-semibold leading-snug text-[#00211c] dark:text-white">
